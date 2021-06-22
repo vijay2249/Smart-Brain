@@ -9,9 +9,11 @@ import Face from './Components/FaceRecog/FaceRecog';
 import SignIn from './Components/Signin/Signin';
 import Register from './Components/Register/Register';
 import './App.css';
+import { keys } from './config.js';
 
-// Clarifai API key
-const app = new Clarifai.App({apiKey: "YOUR API KEY HERE"});
+const api_KEY = keys.CLARIFAI_API_KEY;
+
+const app = new Clarifai.App({apiKey: api_KEY});
 
 const particlesOptions = {
   "particles": {
@@ -39,7 +41,6 @@ class App extends Component {
 
   CalculateFaceLocation = (data) =>{
     const region = data.outputs[0].data.regions;
-    // console.log(region);
     const image = document.getElementById('inputImage');
     const Width = Number(image.width);
     const Height = Number(image.height);
