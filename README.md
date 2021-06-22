@@ -1,16 +1,22 @@
 This app uses Clarifai Face Detect API for the process.
 So for this app to work make sure that you have your own clarifai api key 
 Get it from here [Clarifai](https://www.clarifai.com/).
-
 Also create your own API key in that website.
 
-And use the API key in app.js file and at 
+After getting your own api key follow the steps below:
 
-const app = new Clarifai.App({
-  apiKey: 'YOUR API KEY HERE'
-});
+1. create a new config.js file in the src folder
 
-at this line of code
+2. then create an object keys with key value as CLARIFAI_API_KEY and your api as value
+
+The code in your config.js at the end should be
+
+    export const keys = { CLARIFAI_API_KEY : "YOUR API KEY HERE" }
+
+replace YOUR API KEY HERE with your API key.
+
+In this code i used my own api key by creating a new file and storing adding the file to gitignore file so you can't see it..
+
 
 
 This app just recognises the face in a picture
