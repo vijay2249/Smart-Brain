@@ -14,6 +14,7 @@ const Face = ({ input, regions, height, width }) =>{
 		}
 		faceBoxes.push(params);
 	}
+
 	const ReturnBox = (props) =>{
 		return(
 			<div 
@@ -28,8 +29,7 @@ const Face = ({ input, regions, height, width }) =>{
 				}>
 			</div>
 		);
-	} 
-
+	}
 	return (
 		<div className='center ma' >
 			<div className='absolute mt2'>
