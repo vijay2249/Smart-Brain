@@ -33,7 +33,7 @@ const Face = ({ input, regions, height, width }) =>{
 	return (
 		<div className='center ma' >
 			<div className='absolute mt2'>
-				<img id='inputImage' alt='' src={input} width='400px' height='auto' />
+				<img id='inputImage' alt='' src={input} width='auto' height='500px' />
 				{faceBoxes.map((box,index)=><ReturnBox box={box} key={index} i={index}/>)}
 			</div>
 		</div>

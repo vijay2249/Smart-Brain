@@ -12,7 +12,6 @@ import './App.css';
 import { keys } from './config.js';
 
 const api_KEY = keys.CLARIFAI_API_KEY;
-
 const app = new Clarifai.App({apiKey: api_KEY});
 
 const particlesOptions = {
@@ -34,10 +33,26 @@ class App extends Component {
       regions:{},
       height:"",
       width:"",
-      route: 'signin',
-      isSignedIn: false
+      route: 'register',
+      isSignedIn: false,
+      userData: {
+        username: '',
+        email: '',
+        entries: 0
+      }
     }
   }
+
+  updateUIuser = (user) =>{
+    this.setState({
+      userData:{
+        username: user.username,
+        email: user.email,
+        entries: 0
+      }
+    })
+  }
+
 
   CalculateFaceLocation = (data) =>{
     const region = data.outputs[0].data.regions;
@@ -50,9 +65,26 @@ class App extends Component {
   onInputChange = (event) => this.setState({input: event.target.value});
 
   onButtonSubmit = () => {
-    // face detect model from clarifai
     app.models.predict(Clarifai.FACE_DETECT_MODEL,this.state.input)
-    .then(response => this.CalculateFaceLocation(response))
+    .then(response => {
+      // if(response){
+      //   fetch('http://localhost:443/images',{
+      //     method: 'put',
+      //     headers: {'Content-Type': 'application/json'},
+      //     body: JSON.stringify({
+      //       email: this.state.userData.email,
+      //       entries: response.outputs[0].data.regions.length
+      //     })
+      //   })
+      //     .then(response =>response.json())
+      //     .then(facesDetected =>{
+      //       this.setState(Object.assign(this.state.userData, {entries: facesDetected}))
+      //     })
+      // }
+      this.CalculateFaceLocation(response)
+      let entry = this.state.userData.entries + response.outputs[0].data.regions.length;
+      this.setState(Object.assign(this.state.userData, {entries: entry}))
+    })
     .catch(err => console.log(err));
   }
 
@@ -63,7 +95,8 @@ class App extends Component {
   }
 
   render(){
-    const {isSignedIn, route, input, regions, height, width} = this.state;
+    const {isSignedIn, route, input, regions, height, width, userData} = this.state;
+
     return (
       <div className="App">
         <Particles className='particles' params={particlesOptions} />
@@ -71,16 +104,17 @@ class App extends Component {
         { route === 'home'
           ? <div>
               <Logo />
-              <Rank />
+              <Rank displayUser={userData.username} entries={userData.entries}/>
               <ImageLinkForm onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit} />
               <Face input={input} regions={regions} height={height} width={width} ></Face>
             </div>
           : (
               route === 'signin'
-              ? <SignIn onRouteChange={this.onRouteChange} />
-              : <Register onRouteChange={this.onRouteChange} />
+              ? <SignIn onRouteChange={this.onRouteChange} setUserData={this.updateUIuser}/>
+              : <Register onRouteChange={this.onRouteChange} updateUIuser={this.updateUIuser} />
             )
         }
+
       </div>
     );
   }
