@@ -1,0 +1,39 @@
+.Card {
+  margin: auto;
+  height: 550px;
+  width: 40%;
+}
+
+.wrapper {
+  display: block;
+  position: relative;
+  margin-left: 16%;
+  top: 15%;
+  width: 450px;
+  height: 550px;
+  box-shadow: 1px 5px 10px 1px #333;
+  overflow: hidden;
+  border-radius: 15px;
+  background: transparent;
+  margin: auto;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  border-radius: 13px;
+  border-bottom: 3px solid rgb(255, 255, 255);
+}
+
+a {
+  cursor: pointer;
+  margin: 5% 15%;
+  font-size: 25px;
+  font-weight: 300%;
+}
+
+.login, .register{
+  display: flex;
+  flex-direction: column;
+}
