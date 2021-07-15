@@ -3,7 +3,7 @@ import Login from './Login';
 import Register from './Register';
 import './Form.css';
 
-export const Form = ({onRouteChange}) =>{
+export const Form = ({onRouteChange, updateUIuser}) =>{
 
   let [route, setRoute] = useState('register');
 
@@ -24,7 +24,11 @@ export const Form = ({onRouteChange}) =>{
             <a href='#login' name='login' onClick={handleClick} className='SignIn'>SignIn</a>
             <a href='#register' name='register' onClick={handleClick} className='SignUp'>SignUp</a>
           </div>
-          {route==='login'? <Login toHome={toHome}/>:<Register toHome={toHome}/>}
+          {
+            route==='login'
+              ? <Login toHome={toHome} userData={updateUIuser}/>
+              : <Register toHome={toHome} userData={updateUIuser}/>
+          }
         </div>
       </div>
     </div>

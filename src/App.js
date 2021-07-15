@@ -107,7 +107,7 @@ class App extends Component {
               <ImageLinkForm onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit} />
               <Face input={input} regions={regions} height={height} width={width} ></Face>
             </div>
-          : <Form onRouteChange={this.onRouteChange}/>
+          : <Form onRouteChange={this.onRouteChange} updateUIuser={this.updateUIuser}/>
         }
 
       </div>
