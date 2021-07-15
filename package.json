@@ -17,6 +17,7 @@
     "react-particles-js": "^3.4.1",
     "react-scripts": "4.0.1",
     "react-tilt": "^0.1.4",
+    "styled-components": "^5.3.0",
     "tachyons": "^4.12.0",
     "web-vitals": "^0.2.4"
   },
@@ -41,7 +42,7 @@
       "not dead",
       "not op_mini all"
     ],
-    "development":[
+    "development": [
       ">0.3%",
       "not ie 11",
       "not dead",

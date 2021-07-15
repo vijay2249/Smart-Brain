@@ -6,8 +6,9 @@ import Logo from './Components/Logo/Logo';
 import ImageLinkForm from './Components/ImageLinkForm/ILform';
 import Rank from './Components/Rank/Rank';
 import Face from './Components/FaceRecog/FaceRecog';
-import SignIn from './Components/Signin/Signin';
-import Register from './Components/Register/Register';
+// import SignIn from './Components/Signin/Signin';
+// import Register from './Components/Register/Register';
+import {Form} from './Components/Form/Form';
 import './App.css';
 import { keys } from './config.js';
 
@@ -75,11 +76,7 @@ class App extends Component {
               <ImageLinkForm onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit} />
               <Face input={input} regions={regions} height={height} width={width} ></Face>
             </div>
-          : (
-              route === 'signin'
-              ? <SignIn onRouteChange={this.onRouteChange} />
-              : <Register onRouteChange={this.onRouteChange} />
-            )
+          : <Form onRouteChange={this.onRouteChange}/>
         }
       </div>
     );
