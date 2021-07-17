@@ -17,7 +17,12 @@ const Register = ({toHome, userData}) =>{
 
   let handleSubmit = () =>{
     let {password, confirmPassword} = registerData;
-    if(password === confirmPassword){
+    if((password === confirmPassword) && password !== ''){
+      fetch('http://localhost:443/register',{
+        method: 'post',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({registerData})
+      })
       userData(registerData);
       toHome('home');  
     }
@@ -25,11 +30,11 @@ const Register = ({toHome, userData}) =>{
       alert('password and confirm password filed values must match');
     }
   }
-
+  
   return(
     <div id="#Register" className='register'>
       <Label>UserName</Label>
-      <Input name='username' type='text' placeholder='username' onChange={handleChange} value={registerData.username}/>
+      <Input name='username' type='text' placeholder='username' onChange={handleChange} value={registerData.username} required/>
       <Label>Email</Label>
       <Input name='email' type='email' placeholder='email' onChange={handleChange}  value={registerData.email}/>
       <Label>Password</Label>

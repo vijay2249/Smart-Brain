@@ -1,6 +1,5 @@
 .particles{
   position: absolute;
-   /*every thing stays at the position where it is even after scrolling down */
   top: 0;
   right: 0;
   bottom: 0;
@@ -16,8 +15,3 @@
   display: flex;
   justify-content: center;
 }
-
-/*input[type=text]{
-  border: none;
-  border-bottom: 1px solid red;
-}*/

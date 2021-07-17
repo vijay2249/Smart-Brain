@@ -14,10 +14,28 @@ const Login = ({toHome, userData}) =>{
     setSignInData({...signInData, [name]:value});
   }
 
-  const handleSubmit = () =>{
-    signInData.username = signInData.email.split('@')[0];
-    userData(signInData);
-    toHome('home');
+  const handleSubmit = (event) =>{
+    let {email, password} = signInData;
+    if(email === '' || password === ''){
+      alert('Please enter details')
+    }
+    else{
+      signInData.username = email.split('@')[0];
+      // fetch('http://localhost:443/signin',{
+        // method:'post',
+        // headers:{'Content-Type':'application/json'},
+        // body: JSON.stringify({signInData})
+      // })
+        // .then(response => response.json())
+        // .then(data =>{
+          // if(data !== 'error'){
+            userData(signInData);
+            toHome('home');
+          // }
+          // else alert('enter correct login details');
+        // })
+    }
+    event.preventDefault();
   }
 
   return(

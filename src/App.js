@@ -32,7 +32,7 @@ class App extends Component {
       regions:{},
       height:"",
       width:"",
-      route: 'register',
+      route: 'login',
       isSignedIn: false,
       userData: {
         username: '',
@@ -48,6 +48,7 @@ class App extends Component {
         username: user.username,
         email: user.email,
         entries: 0
+        //since this is just at the fronted stage, by-default the entries count is set to 0 at start
       }
     })
   }
@@ -66,20 +67,20 @@ class App extends Component {
   onButtonSubmit = () => {
     app.models.predict(Clarifai.FACE_DETECT_MODEL,this.state.input)
     .then(response => {
-      // if(response){
-      //   fetch('http://localhost:443/images',{
-      //     method: 'put',
-      //     headers: {'Content-Type': 'application/json'},
-      //     body: JSON.stringify({
-      //       email: this.state.userData.email,
-      //       entries: response.outputs[0].data.regions.length
-      //     })
-      //   })
-      //     .then(response =>response.json())
-      //     .then(facesDetected =>{
-      //       this.setState(Object.assign(this.state.userData, {entries: facesDetected}))
-      //     })
-      // }
+      if(response !== 'error'){
+        fetch('http://localhost:443/images',{
+          method: 'put',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({
+            email: this.state.userData.email,
+            entries: response.outputs[0].data.regions.length
+          })
+        })
+          .then(response =>response.json())
+          .then(facesDetected =>{
+            this.setState(Object.assign(this.state.userData, {entries: facesDetected}))
+          })
+      }
       this.CalculateFaceLocation(response)
       let entry = this.state.userData.entries + response.outputs[0].data.regions.length;
       this.setState(Object.assign(this.state.userData, {entries: entry}))
@@ -109,7 +110,6 @@ class App extends Component {
             </div>
           : <Form onRouteChange={this.onRouteChange} updateUIuser={this.updateUIuser}/>
         }
-
       </div>
     );
   }
