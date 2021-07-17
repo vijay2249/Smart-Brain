@@ -18,10 +18,11 @@ replace YOUR API KEY HERE with your API key.
 In this code i used my own api key by creating a new file and storing adding the file to gitignore file so you can't see it..
 
 
-
 This app just recognises the face in a picture
 
 Also the local files cannot be accessced due to security
+
+Input url better end with image extensions(with either jpg or jpeg or png)
 
 More features to come near by.
 
