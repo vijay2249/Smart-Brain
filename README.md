@@ -1,3 +1,14 @@
+# SmartBrain Frontend
+<p align='center'>
+    <img alt="W3C Validation" src="https://img.shields.io/w3c-validation/html?targetUrl=https%3A%2F%2Fvijay2249.github.io%2FSmartBrainFrontend%2F">
+    <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/vijay2249/SmartBrainFrontend?style=flat-square">
+    <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/vijay2249/SmartBrainFrontend">
+    <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/vijay2249/SmartBrainFrontend">
+    <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/vijay2249/SmartBrainFrontend">
+    <img alt="GitHub issues" src="https://img.shields.io/github/issues/vijay2249/SmartBrainFrontend?style=flat-square">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/vijay2249/SmartBrainFrontend">
+</p>
+
 This app uses Clarifai Face Detect API for the process.
 So for this app to work make sure that you have your own clarifai api key 
 Get it from here [Clarifai](https://www.clarifai.com/).
