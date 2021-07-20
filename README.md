@@ -9,6 +9,8 @@
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/vijay2249/SmartBrainFrontend">
 </p>
 
+![visitors](https://visitor-badge.glitch.me/badge?page_id=vijay2249.3a6df81)
+
 This app uses Clarifai Face Detect API for the process.
 So for this app to work make sure that you have your own clarifai api key 
 Get it from here [Clarifai](https://www.clarifai.com/).
