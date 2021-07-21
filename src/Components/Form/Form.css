@@ -18,22 +18,8 @@
   margin: auto;
 }
 
-.navBar {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-  border-radius: 13px;
-  border-bottom: 3px solid rgb(255, 255, 255);
-}
-
-a {
-  cursor: pointer;
-  margin: 5% 15%;
-  font-size: 25px;
-  font-weight: 300%;
-}
-
 .login, .register{
   display: flex;
   flex-direction: column;
 }
+

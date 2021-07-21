@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import Login from './Login';
 import Register from './Register';
 import './Form.css';
+import {NavBar, Link} from '../Styles/Styles';
 
 export const Form = ({onRouteChange, updateUIuser}) =>{
 
-  let [route, setRoute] = useState('register');
+  let [route, setRoute] = useState('login');
 
-  let handleClick = (event) =>{
+  let ChangeRoute = (event) =>{
     let {name} = event.target;
     setRoute(name);
   }
@@ -20,14 +21,14 @@ export const Form = ({onRouteChange, updateUIuser}) =>{
     <div>
       <div className='Card'>
         <div className='wrapper'>
-          <div className='navBar'>
-            <a href='#login' name='login' onClick={handleClick} className='SignIn'>SignIn</a>
-            <a href='#register' name='register' onClick={handleClick} className='SignUp'>SignUp</a>
-          </div>
+          <NavBar className='navBar'>
+            <Link href='#login' name='login' onClick={ChangeRoute} className='SignIn'>SignIn</Link>
+            <Link href='#register' name='register' onClick={ChangeRoute} className='SignUp'>SignUp</Link>
+          </NavBar>
           {
             route==='login'
-              ? <Login toHome={toHome} userData={updateUIuser}/>
-              : <Register toHome={toHome} userData={updateUIuser}/>
+              ? <Login ChangeRoute={ChangeRoute} toHome={toHome} userData={updateUIuser}/>
+              : <Register ChangeRoute={ChangeRoute} toHome={toHome} userData={updateUIuser}/>
           }
         </div>
       </div>

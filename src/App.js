@@ -48,7 +48,6 @@ class App extends Component {
         username: user.username,
         email: user.email,
         entries: 0
-        //since this is just at the fronted stage, by-default the entries count is set to 0 at start
       }
     })
   }
@@ -103,7 +102,7 @@ class App extends Component {
         <Navigation onRouteChange={this.onRouteChange} isSignedIn={isSignedIn} />
         { route === 'home'
           ? <div>
-              <Logo />
+              <Logo/>
               <Rank displayUser={userData.username} entries={userData.entries}/>
               <ImageLinkForm onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit} />
               <Face input={input} regions={regions} height={height} width={width} ></Face>

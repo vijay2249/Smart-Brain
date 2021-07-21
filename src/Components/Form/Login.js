@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import {Label, Input, Hr} from '../Styles/Styles';
+import {Label, Input, Hr, FlexCenter, Backup} from '../Styles/Styles';
 
-const Login = ({toHome, userData}) =>{
+const Login = ({toHome, userData, ChangeRoute}) =>{
 
   let [signInData, setSignInData] = useState({
     email:'',
@@ -39,13 +39,17 @@ const Login = ({toHome, userData}) =>{
   }
 
   return(
-    <div id='#login' className='login non_active'>
+    <div className='login'>
       <Label>Email</Label>
-      <Input type='email' placeholder='email' onChange={handleChange} name='email' value={signInData.email}/>
+      <Input type='email' onChange={handleChange} name='email' value={signInData.email} required/>
       <Label>Password</Label>
-      <Input type='password' placeholder='password'onChange={handleChange} name='password' value={signInData.password}/>
+      <Input type='password' onChange={handleChange} name='password' value={signInData.password} required/>
       <Input onClick={handleSubmit} type='submit' value='SignIn' />
       <Hr/>
+      <FlexCenter>
+        <Backup>Forgot Password </Backup>
+        <Backup name='register' onClick={ChangeRoute}>SignUp</Backup>
+      </FlexCenter>
     </div>
   );
 }
