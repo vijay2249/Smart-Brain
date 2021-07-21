@@ -19,11 +19,11 @@ const Register = ({toHome, userData, ChangeRoute}) =>{
     let {email, username, password, confirmPassword} = registerData;
     if(password === '' || confirmPassword === '' || username===''||email===''){alert('All fields are required');}
     else if((password === confirmPassword) && password !== ''){
-      fetch('http://localhost:443/register',{
-        method: 'post',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({registerData})
-      })
+      // fetch('http://localhost:443/register',{
+        // method: 'post',
+        // headers: {'Content-Type': 'application/json'},
+        // body: JSON.stringify({registerData})
+      // })
       userData(registerData);
       toHome('home');  
     }

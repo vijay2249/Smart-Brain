@@ -66,20 +66,20 @@ class App extends Component {
   onButtonSubmit = () => {
     app.models.predict(Clarifai.FACE_DETECT_MODEL,this.state.input)
     .then(response => {
-      if(response !== 'error'){
-        fetch('http://localhost:443/images',{
-          method: 'put',
-          headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify({
-            email: this.state.userData.email,
-            entries: response.outputs[0].data.regions.length
-          })
-        })
-          .then(response =>response.json())
-          .then(facesDetected =>{
-            this.setState(Object.assign(this.state.userData, {entries: facesDetected}))
-          })
-      }
+      // if(response !== 'error'){
+        // fetch('http://localhost:443/images',{
+          // method: 'put',
+          // headers: {'Content-Type': 'application/json'},
+          // body: JSON.stringify({
+            // email: this.state.userData.email,
+            // entries: response.outputs[0].data.regions.length
+          // })
+        // })
+          // .then(response =>response.json())
+          // .then(facesDetected =>{
+            // this.setState(Object.assign(this.state.userData, {entries: facesDetected}))
+          // })
+      // }
       this.CalculateFaceLocation(response)
       let entry = this.state.userData.entries + response.outputs[0].data.regions.length;
       this.setState(Object.assign(this.state.userData, {entries: entry}))
