@@ -9,7 +9,6 @@
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/vijay2249/SmartBrainFrontend">
 </p>
 
-![visitors](https://visitor-badge.glitch.me/badge?page_id=vijay2249.3a6df81)
 
 This app uses Clarifai Face Detect API for the process.
 So for this app to work make sure that you have your own clarifai api key 
@@ -52,4 +51,17 @@ then open your browser navigate to [localhost:3000](localhost:3000)
 
 Also this app do not accept the local files, please use pictures from the internet.
 
-### `Happy Learning`
+## Dependencies or Modules used
+
+- [Robohash](https://robohash.org/) for Logo
+- [React Tilt](https://www.npmjs.com/package/react-tilt) npm package for Logo animation
+- [shields.io](https://shields.io/) to update readme status automatically
+- [styled-components](https://styled-components.com/) for creating _src/Components/Styles/Styles.js_ file (alternative way to apply css to directly components)
+- [Clarifai API](https://www.clarifai.com/developers/pre-trained-models) for detecting face in picture
+- [React-particle-js](https://www.npmjs.com/package/react-particles-js) for background particles
+- [Tachyons](https://tachyons.io/) for some of the pre-defined styling 
+- For more information about this repo dependencies click [here](https://github.com/vijay2249/SmartBrainFrontend/network/dependencies)
+
+<p align:'center' style="font-size:20px;"><i>Happy Learning</i></p>
+
+# -->_😉😉HAPPY LEARNING😉😉_ <--
