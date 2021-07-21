@@ -52,7 +52,6 @@ class App extends Component {
     })
   }
 
-
   CalculateFaceLocation = (data) =>{
     const region = data.outputs[0].data.regions;
     const image = document.getElementById('inputImage');
