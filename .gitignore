@@ -11,9 +11,7 @@
 # hiding the sensitive information in the project
 /src/config.js
 
-# hiding the annoying eslintcache file
 .eslintcache
-
 
 # production
 /build
