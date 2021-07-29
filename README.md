@@ -65,4 +65,6 @@ Also this app do not accept the local files, please use pictures from the intern
 
 <p align:'center' style="font-size:20px;"><i>Happy Learning</i></p>
 
+- Also check [this](https://github.com/DUMMY-the-BOT//HideSensitiveInformation) repo for disabling the chrome or any browser to load your react source code in the source tab
+
 # -->_😉😉HAPPY LEARNING😉😉_ <--
