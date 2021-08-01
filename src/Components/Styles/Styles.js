@@ -36,6 +36,9 @@ export const Input = styled.input`
     border-radius: 10px;
     width: 40%;
   }
+  &[name=confirmPassword]{
+    margin-bottom: 2%;
+  }
 `;
 
 export const Hr = styled.hr`

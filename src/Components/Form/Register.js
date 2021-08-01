@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import {Label, Input, Hr, FlexCenter} from '../Styles/Styles';
+import {PasswordFieldsTextMatch} from '../Error/Error';
 
 const Register = ({toHome, userData, ChangeRoute}) =>{
 
+  const [valuesMatched, setBoolean] = useState(false);
   const [registerData, setRegisterData] = useState({
     username: '',
     email: '',
@@ -28,7 +30,7 @@ const Register = ({toHome, userData, ChangeRoute}) =>{
       toHome('home');  
     }
     else{
-      alert('password and confirm password filed values must match');
+      setBoolean(false);
     }
   }
   
@@ -42,6 +44,7 @@ const Register = ({toHome, userData, ChangeRoute}) =>{
       <Input name='password' type='password' onChange={handleChange} value={registerData.password} required/>
       <Label>Confirm Password</Label>
       <Input name='confirmPassword' type='password' onChange={handleChange}  value={registerData.confirmPassword} required/>
+      {!valuesMatched && <PasswordFieldsTextMatch/>}
       <Input onClick={handleSubmit} type='submit' value='Register' />
       <Hr />
       <FlexCenter>

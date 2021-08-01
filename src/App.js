@@ -61,7 +61,7 @@ class App extends Component {
   }
 
   onInputChange = (event) => this.setState({input: event.target.value});
-
+  
   onButtonSubmit = () => {
     app.models.predict(Clarifai.FACE_DETECT_MODEL,this.state.input)
     .then(response => {
@@ -79,9 +79,15 @@ class App extends Component {
             // this.setState(Object.assign(this.state.userData, {entries: facesDetected}))
           // })
       // }
-      this.CalculateFaceLocation(response)
-      let entry = this.state.userData.entries + response.outputs[0].data.regions.length;
-      this.setState(Object.assign(this.state.userData, {entries: entry}))
+      // handle the error for non human faces in the images
+      // in this case the length of data is 0
+      if(Object.keys(response.outputs[0].data).length === 0){
+        alert("Enter image url that contains human faces")
+      }else{
+        this.CalculateFaceLocation(response)
+        let entry = this.state.userData.entries + response.outputs[0].data.regions.length;
+        this.setState(Object.assign(this.state.userData, {entries: entry}))
+      }
     })
     .catch(err => console.log(err));
   }
