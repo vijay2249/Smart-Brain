@@ -1,14 +1,5 @@
-import React, {Component} from 'react';
-import Particles from 'react-particles-js';
-import Clarifai from 'clarifai';
-import Navigation from './Components/Navigation/Navigation';
-import Logo from './Components/Logo/Logo';
-import ImageLinkForm from './Components/ImageLinkForm/ILform';
-import Rank from './Components/Rank/Rank';
-import Face from './Components/FaceRecog/FaceRecog';
-import {Form} from './Components/Form/Form';
+import {React, Component, Particles, Clarifai, Navigation, Logo, ImageLinkForm,Rank,Face,Form,keys} from './Components/Imports/Imports';
 import './App.css';
-import { keys } from './config.js';
 
 const api_KEY = keys.CLARIFAI_API_KEY;
 const app = new Clarifai.App({apiKey: api_KEY});
@@ -22,7 +13,7 @@ const particlesOptions = {
       "value": 3
     }
   }
-}
+} 
 
 class App extends Component {
   constructor(){
