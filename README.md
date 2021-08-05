@@ -7,7 +7,6 @@
     <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/vijay2249/SmartBrainFrontend">
     <img alt="GitHub issues" src="https://img.shields.io/github/issues/vijay2249/SmartBrainFrontend?style=flat-square">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/vijay2249/SmartBrainFrontend">
-    <img alt="CodeFacor Review" src="https://www.codefactor.io/repository/github/vijay2249/smartbrainfrontend/badge"/>
 </p>
 
 
