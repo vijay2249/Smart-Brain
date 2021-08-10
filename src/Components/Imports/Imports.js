@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Particles from 'react-particles-js';
-import Clarifai from 'clarifai';
 import Navigation from '../Navigation/Navigation';
 import Logo from '../Logo/Logo';
 import ImageLinkForm from '../ImageLinkForm/ILform';
@@ -9,8 +8,7 @@ import {Form} from '../Form/Form';
 import { keys } from '../../config'
 import Face from '../FaceRecog/FaceRecog'
 
-export { 
-  React, Component, Particles, Clarifai,
-  // these are components created
-  Navigation,Logo,ImageLinkForm, Rank, Face, Form, keys
+export {
+  React, Component, Particles, // these are npm packages
+  Navigation,Logo,ImageLinkForm, Rank, Face, Form, keys // these are components created
 }

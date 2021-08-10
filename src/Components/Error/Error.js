@@ -1,12 +1,16 @@
 import React from 'react';
+import styled from 'styled-components';
+const H4 = styled.h4`
+  margin: 0;
+  margin-bottom: 5px;
+  // color: rgba(255,0,0,0.7);
+`;
 
 // Imported by Form/Login.js
 // 1. Incorrect login details
 export const IncorrectLoginDetails = () =>{
   return(
-    <h4 style={{margin: '0', marginBottom:'4px'}}>
-      Enter correct credentials
-    </h4>
+    <H4>Enter correct credentials</H4>
   );
 }
 
@@ -14,7 +18,7 @@ export const IncorrectLoginDetails = () =>{
 // 3. password and confirm password fields text matching
 export const PasswordFieldsTextMatch = () =>{
   return(
-    <h4 style={{margin:'0'}}>Password Fields values must match</h4>
+    <H4>Password Fields values must match</H4>
   );
 }
 
@@ -23,7 +27,15 @@ export const PasswordFieldsTextMatch = () =>{
 // 4. image url that do not contain human faces
 export const NonHumanFaces = () =>{
   return(
-    <h3>Please enter image url that contains human faces</h3>
+    <H4>Please enter image url that contains human faces</H4>
+  );
+}
+
+// Imported by Form/Register.js
+// 5. User already exists while registration
+export const UserAlreadyExists = () =>{
+  return(
+    <H4>User Already exists with these credentials, enter new credentials to register</H4>
   );
 }
 

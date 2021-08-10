@@ -4,17 +4,16 @@ import { IncorrectLoginDetails } from '../Error/Error';
 
 const Login = ({toHome, userData, ChangeRoute}) =>{
 
-  let [correctDetails, setBoolean] = useState(true);
+  let [correctDetails, setCorrectDetails] = useState(true);
   let [signInData, setSignInData] = useState({
     email:'',
-    password: '',
-    username:''
+    password: ''
   })
 
   let handleChange = (e) =>{
     const {name, value} = e.target;
     setSignInData({...signInData, [name]:value});
-    setBoolean(true)
+    if(correctDetails === false)setCorrectDetails(true)
   }
 
   const handleSubmit = (event) =>{
@@ -23,24 +22,22 @@ const Login = ({toHome, userData, ChangeRoute}) =>{
       alert('Please enter details')
     }
     else{
-      if(email!=='test@gmail.com' || password!=='test') {
-        setBoolean(false)
-        setSignInData({email:'', password:''})
-      }else{
-        signInData.username = email.split('@')[0];
-        // fetch('http://localhost:443/signin',{
-          // method:'post',
-          // headers:{'Content-Type':'application/json'},
-          // body: JSON.stringify({signInData})
-        // })
-          // .then(response => response.json())
-          // .then(data =>{
-            // if(data !== 'error'){
-              userData(signInData);
-              toHome('home');
-          // }
+      fetch('http://localhost:443/signin',{
+        method:'post',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({signInData})
+      })
+        .then(response => response.json())
+        .then(data =>{
+          if(data !== 'error'){
+            userData(data);
+            toHome('home');
+          }
+          else{
+            setCorrectDetails(false)
+          }
+        })
       }
-    }
     event.preventDefault();
   }
 
