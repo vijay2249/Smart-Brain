@@ -67,3 +67,20 @@ Also this app do not accept the local files, please use pictures from the intern
 - Also check [this](https://github.com/DUMMY-the-BOT//HideSensitiveInformation) repo for disabling the chrome or any browser to load your react source code in the source tab
 
 # -->_😉😉HAPPY LEARNING😉😉_ <--
+
+
+## Note:
+Not updating the gh-pages branch is intentional considering there is chance to steal API key
+
+This is to mention that this is just the frontend app and also have to get image response from clarifai to display the required information in the site
+
+This means that since there is no server, the request has to be send from the user system to clarifai with an API which is injected somewhere inside the code
+
+Else we cannot get the response clarifai for the image or atleast send the image to clarifai to get the response from them
+
+Just waiting to see if anyone finds this glich
+
+_If you found it please do not repeated the same mistake as I did while creating your app_
+
+## Currently this app is in the fly but there will be no response and the main functionality is off as the API key used in creation of the frontend part is deleted 😉
+_Gotta be careful once you find the glitch in your app_
