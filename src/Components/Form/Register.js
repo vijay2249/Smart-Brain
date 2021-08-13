@@ -25,7 +25,7 @@ const Register = ({toHome, userData, ChangeRoute}) =>{
       alert('All fields are required');
     }
     else if((password === confirmPassword) && password !== '' && password.length < 8){
-      fetch('http://localhost:443/register',{
+      fetch('https://secure-fjord-78328.herokuapp.com/register',{
         method: 'post',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({registerData})

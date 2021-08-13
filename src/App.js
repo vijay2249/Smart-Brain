@@ -53,7 +53,7 @@ class App extends Component {
   onInputChange = (event) => this.setState({input: event.target.value, regions:{}});
 
   onButtonSubmit = () =>{
-    fetch('http://localhost:443/images',{
+    fetch('https://secure-fjord-78328.herokuapp.com/images',{
       method: 'put',
       headers: {'Content-Type':'application/json'},
       body:JSON.stringify({
