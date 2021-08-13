@@ -1,4 +1,4 @@
-import {React, Component, Particles, Navigation, Logo, ImageLinkForm,Rank,Face,Form,keys} from './Components/Imports/Imports';
+import {React, Component, Particles, Navigation, Logo, ImageLinkForm,Rank,Face,Form} from './Components/Imports/Imports';
 import './App.css';
 
 const particlesOptions = {

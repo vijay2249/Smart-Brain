@@ -8,11 +8,6 @@
 # testing
 /coverage
 
-# hiding the sensitive information in the project
-/src/config.js
-
-.eslintcache
-
 # production
 /build
 
