@@ -1,3 +1,5 @@
+Readme will be updated soon...
+
 # SmartBrain Frontend
 <p align='center'>
     <img alt="W3C Validation" src="https://img.shields.io/w3c-validation/html?targetUrl=https%3A%2F%2Fvijay2249.github.io%2FSmartBrainFrontend%2F">
