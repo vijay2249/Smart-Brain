@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import {Label, Input, Hr, FlexCenter} from '../Styles/Styles';
-import {PasswordFieldsTextMatch, UserAlreadyExists} from '../Error/Error';
+import {PasswordFieldsTextMatch, UserAlreadyExists,NotStrongPassword} from '../Error/Error';
 
 const Register = ({toHome, userData, ChangeRoute}) =>{
 
+  let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})')
+  const [isStrongPassword, setIsStrongPassword] = useState(true)
   const [valuesMatched, setValuesMatched] = useState(true)
   const [newUser, setNewUser] = useState(true)
   const [registerData, setRegisterData] = useState({
@@ -17,6 +19,8 @@ const Register = ({toHome, userData, ChangeRoute}) =>{
     let {name, value} = e.target;
     setRegisterData({...registerData, [name]:value});
     if(newUser === false) setNewUser(true)
+    if(isStrongPassword === false) setIsStrongPassword(true)
+    if(valuesMatched === false) setValuesMatched(true)
   }
 
   let handleSubmit = () =>{
@@ -24,22 +28,25 @@ const Register = ({toHome, userData, ChangeRoute}) =>{
     if(password === '' || confirmPassword === '' || username===''||email===''){
       alert('All fields are required');
     }
-    else if((password === confirmPassword) && password !== '' && password.length < 8){
-      fetch('https://secure-fjord-78328.herokuapp.com/register',{
-        method: 'post',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({registerData})
-      })
-        .then(res => res.json())
-        .then(data =>{
-          if(data !== "error"){
-            userData(data)
-            toHome('home')
-          }
-          else{
-            setNewUser(false)
-          }
+    else if(password === confirmPassword){
+      if(strongPassword.test(password)){
+        fetch('https://secure-fjord-78328.herokuapp.com/register',{
+          method: 'post',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({registerData})
         })
+          .then(res => res.json())
+          .then(data =>{
+            if(data !== "error"){
+              userData(data)
+              toHome('home')
+            }
+            else{setNewUser(false)}
+          })
+      }
+      else{
+        setIsStrongPassword(false)
+      }
     }
     else{
       setValuesMatched(false);
@@ -58,6 +65,7 @@ const Register = ({toHome, userData, ChangeRoute}) =>{
       <Input name='confirmPassword' type='password' onChange={handleChange}  value={registerData.confirmPassword} required/>
       {!valuesMatched && <PasswordFieldsTextMatch/>}
       {!newUser && <UserAlreadyExists/>}
+      {!isStrongPassword && <NotStrongPassword/>}
       <Input onClick={handleSubmit} type='submit' value='Register' />
       <Hr />
       <FlexCenter>

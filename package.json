@@ -1,7 +1,7 @@
 {
   "homepage": "https://vijay2249.github.io/SmartBrainFrontend",
   "name": "finalproject",
-  "version": "0.4.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "gh-pages": "^3.2.3",

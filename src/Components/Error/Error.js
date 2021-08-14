@@ -39,10 +39,10 @@ export const UserAlreadyExists = () =>{
   );
 }
 
-/*
-POSSIBLE ERRORS:
-
-// Imported by Form/Register.js
-2. Not a strong Password - backend not yet created
-
-*/
+export const NotStrongPassword = () =>{
+  return(
+    <H4>Please use strong password
+      ( <a href='https://support.google.com/accounts/answer/32040?hl=en'>learn here </a>)
+    </H4>
+  );
+}
