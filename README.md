@@ -1,6 +1,6 @@
 # SmartBrain
 <p align='center'>
-    <img alt="W3C Validation" src="https://img.shields.io/w3c-validation/html?targetUrl=https%3A%2F%2Fvijay2249.github.io%2FSmartBrainFrontend%2F">
+    <img alt="W3C Validation" src="https://img.shields.io/w3c-validation/html?targetUrl=https%3A%2F%2Fvijay2249.github.io%2FSmart-Brain%2F">
     <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/vijay2249/SmartBrainFrontend?style=flat-square">
     <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/vijay2249/SmartBrainFrontend">
     <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/vijay2249/SmartBrainFrontend">
