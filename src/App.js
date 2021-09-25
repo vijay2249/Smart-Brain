@@ -1,4 +1,5 @@
 import {React, Component, Particles, Navigation, Logo, ImageLinkForm,Rank,Face,Form} from './Components/Imports/Imports';
+import { BrowserRouter as Router, Switch, Route,Link } from "react-router-dom";
 import './App.css';
 
 const particlesOptions = {
